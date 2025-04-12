@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo general y fuente */
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  background: linear-gradient(135deg, #f0f4f1, #fdfaf6);
+  color: #22543d;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Cabecera */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #22543d;
+}
+
+/* Efecto máquina de escribir */
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #22543d;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #22543d }
+}
+
+/* Loader */
+.loader {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 50px;
+  animation: pulse 1.2s infinite;
+  color: #4b5563;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Contenedor de listas */
+#list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas */
+article.list {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+article.list:hover {
+  transform: translateY(-4px);
+}
+
+article h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #22543d;
+}
+
+section p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Botón */
+.link-button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #e76f51; /* terracota cálido */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #d65a3f;
+}
+
+/* Transición al mostrar listas */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+footer a {
+  color: #c05621; /* acento naranja tostado */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Utilidad */
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
